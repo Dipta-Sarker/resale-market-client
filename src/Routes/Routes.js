@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         {path:'/login',element:<Login></Login>},
         {path:'/register',element:<Register></Register>},
         {path:'/category/products/:id',
-        loader: async({params})=>{return fetch(`http://localhost:5000/laptops/${params.id}`);}
+        loader: async({params})=>{return fetch(`https://resale-market-server-azure.vercel.app/laptops/${params.id}`);}
         ,element:<PrivateRouter><CategoryProducts></CategoryProducts></PrivateRouter>}
     ]},
 
