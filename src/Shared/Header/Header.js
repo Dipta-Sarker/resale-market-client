@@ -7,7 +7,7 @@ const Header = () => {
         <>
             <Link to='/'><li><a>Home</a></li></Link>
             <Link to='/'><li><a>Home</a></li></Link>
-            <Link to='/'><li><a>Home</a></li></Link>
+            <Link to='/blog'><li><a>Blog</a></li></Link>
 
         </>
     
@@ -24,7 +24,7 @@ const Header = () => {
                            {menue}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Market</a>
+                   <Link to='/'><a className="btn btn-ghost normal-case text-xl">Market</a></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

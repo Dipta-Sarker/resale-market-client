@@ -6,7 +6,7 @@ const Products = () => {
     const {data,isLoading} = useQuery({
         queryKey:['products'],
         queryFn: async () =>{
-            const res = await fetch('products.json')
+            const res = await fetch('http://localhost:5000/laptops')
             const data = await res.json()
             return data
         }
@@ -18,10 +18,10 @@ if(isLoading){
 console.log(data)
     return (
         <div>
-            <h1 className='text-4xl'>Products</h1>
+            <h1 className='text-4xl font-bold my-10 text-center'>Products</h1>
             <div className='grid gap-4 grid-cols-1 sm:grid-cols-2  md:grid-cols-3'>
             {
-                data.map(product =><ProductCard product={product}></ProductCard>)
+                data.map(product =><ProductCard key={product._id} product={product}></ProductCard>)
             }
             </div>
         </div>
