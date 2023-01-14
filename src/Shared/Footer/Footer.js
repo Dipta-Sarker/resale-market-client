@@ -7,7 +7,7 @@ const Footer = () => {
                 <div>
                    <h1 className='text-5xl'>MARKET</h1>
                     <p className="font-bold">
-                        ACME Industries Ltd. <br />Providing reliable tech since 1992
+                        Market Ltd. <br />Providing reliable tech since 1992
                     </p>
                     <p>Copyright © 2023 - All right reserved</p>
                 </div>
