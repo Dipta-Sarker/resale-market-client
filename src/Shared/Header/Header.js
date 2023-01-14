@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { contexApi } from '../../AuthContex/AuthContex';
 
 const Header = () => {
+    const {user,logOut}=useContext(contexApi)
+    const handleSignOut = () =>{
+        logOut()
+        .then()
+        .catch(e =>console.log(e))
+      }
 
     const menue = 
         <>
             <Link to='/'><li><a>Home</a></li></Link>
-            <Link to='/'><li><a>Home</a></li></Link>
+            
+           {user?.email ?
+           <></>
+           :
+           <>
+           <Link to='/register'><li><a>Register</a></li></Link>
+           <Link to='/login'><li><a>Login</a></li></Link>
+           </>
+
+           }
             <Link to='/blog'><li><a>Blog</a></li></Link>
 
         </>
@@ -32,9 +48,14 @@ const Header = () => {
                         {menue}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Get started</a>
-                </div>
+                {user?.email?
+                    <div className="navbar-end">
+                        <p>{user?.email}</p>
+                    <a onClick={handleSignOut} className="btn">SignOut</a>
+                </div>:
+                <></>
+
+                }
             </div>
         </div>
     );
